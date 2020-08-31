@@ -7,7 +7,7 @@ Hi! and Welcome to The Maze. This is a piece of work which will help you to visu
 
 - [Depth-First-Search](https://en.wikipedia.org/wiki/Depth-first_search)
 - [Breadth-First-Search](https://en.wikipedia.org/wiki/Breadth-first_search)
-- [Dijkstras Algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm)
+- [Dijkstra's Algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm)
 - [Left Wall Follower](https://en.wikipedia.org/wiki/Maze_solving_algorithm#Wall_follower)
 - [Right Wall Follower](https://en.wikipedia.org/wiki/Maze_solving_algorithm#Wall_follower)
 - [A star Algorithm](https://en.wikipedia.org/wiki/A*_search_algorithm)
