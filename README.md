@@ -18,3 +18,11 @@ Hi! and Welcome to The Maze. This is a piece of work which will help you to visu
  - [Binary Tree](https://hurna.io/academy/algorithms/maze_generator/binary.html)
  - [Prim's Algorithm](https://en.wikipedia.org/wiki/Prim%27s_algorithm)
  
+ You can also create ranom walls through you mouse. Just click anywhere on the Maze and drag your mouse around. 
+ 
+ You can drag the start and target point around in the same way.
+ 
+ Changing the number of rows and columns are also a choice.
+ 
+ 
+ Enjoy!
