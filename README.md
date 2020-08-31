@@ -5,16 +5,16 @@ Hi! and Welcome to The Maze. This is a piece of work which will help you to visu
 
 ***Algorithm Used To Solve The Maze***
 
--- Depth-First-Search
--- Breadth-First-Search
--- Dijkstra's Agorithm 
--- Left-Wall-Follower
--- Right-Wall-Follower
--- A-Star Algorithm.
+   Depth-First-Search
+   Breadth-First-Search
+   Dijkstra's Agorithm 
+   Left-Wall-Follower
+   Right-Wall-Follower
+   A-Star Algorithm.
   
 ***Maze Creating Algorithms***
 
--- Depth-First-Search
--- Binary Tree Traversal
--- Prim's Algorithm
+   Depth-First-Search
+   Binary Tree Traversal
+   Prim's Algorithm
   
