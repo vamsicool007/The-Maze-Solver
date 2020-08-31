@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>The Maze!!!</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="public/styling/style.css">
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <div class="tutiroal">
+    <div id="dialog" open>
+      <h1 id = "title">Welcome To The Maze</h1>
+      <h4 id = "subtitle">The Maze Is A Visualization Tool That Will Help You Understand Some Common Graph Algorithms.</h4>
+      <p id = "t_content">This is a short tutorial to show you how the site works. If you want feel free to <strong>Skip</strong> or press <strong>Next</strong>.</p>
+      <p id = 'counter'>1/8</p>
+      <img id = 'img_content' src="public/styling/The-Maze.gif" alt="">
+      <button id = 'skipbtn' onclick="closetutorial()">Skip</button>
+      <button id = 'prevbtn' onclick= "prevtutorial()">Previous</button>
+      <button id = 'nextbtn' onclick = "nexttutorial()">Next</button>
+    </div>
+  </div>
+  <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div id="dismiss">
+                <i class="fas fa-arrow-left"></i>
+            </div>
+
+            <div class="sidebar-header">
+                <h3>MENU</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+              <p class='improvedsidebartext'>ROWS : <span id = 'rowshow'></span></p>
+              <div class="slidecontainer">
+                <input type="range" min="9" max="99" step = '2' value="9" class="slider" id="rowRange">
+              </div>
+              <p class='improvedsidebartext'>Columns : <span id = 'colshow'></span></p>
+              <div class="slidecontainer">
+                <input type="range" min="9" max="99" step = '2' value="9" class="slider" id="colRange">
+              </div>
+                <li>
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Algorithms</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a href="#" onclick = 'solveBFS()'>Breadth-First-Search</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick = 'solveDFS()'>Depth-First-Search</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="solveDijkstras()">Dijkstra's</a>
+                        </li>
+                        <li>
+                          <a href="#" onclick = 'solveLWF()'>Left-Wall-Follower</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick = 'solveRWF()'>Right-Wall-Follower</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick = 'solveastar()'>A Star</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">Create Maze!</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li>
+                            <a href="#" onclick = 'makeDFSMAZE()'>With Depth-First-Search</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick = 'makemazeBT()'>With Binary Tree</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick = 'makePrimMaze()'>With Prim's</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+        </nav>
+      </div>
+        <!-- Page Content  -->
+        <div id="content">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+              <button type="button" id="sidebarCollapse" class="navbar-btn">
+                <span class = menu></span>
+                <span class = menu></span>
+                <span class = menu></span>
+              </button>
+
+              <div class="navcontainer">
+                <button class="btn btn1" id = "RunBtn" onclick = 'run()'>RUN!</button>
+                <button class="btn btn2" id = "ResetBtn" onclick = 'reset()'>RESET</button>
+                <button class="btn btn3" id = "ClearPathBtn" onclick = 'resetpathonly()'>CLEAR PATH</button>
+                <button class="btn btn4" id = "ClearWallBtn" onclick = 'resetwallsonly()'>CLEAR WALLS</button>
+                <button class="btn btn4" id = 'openbutton' onclick = "opentutorial()">OPEN TUTORIAL</button>
+              </div>
+            </nav>
+
+            <nav class = "navbar" id = 'infobar'>
+              <div class="indicators">
+                  <ul>
+                    <li>
+                       START
+                    </li>
+                    <li>
+                      <div class="node" id = 'start'></div>
+                    </li>
+                    <li>
+                      TARGET
+                    </li>
+                    <li>
+                      <div class="node" id = 'target'></div>
+                    </li>
+                    <li>
+                      UNVISITED
+                    </li>
+                    <li>
+                      <div class="node" id = 'unvisited'></div>
+                    </li>
+                    <li>
+                      VISITED
+                    </li>
+                    <li>
+                      <div class="node" id = "visited"></div>
+                    </li>
+                    <li>
+                     PATH
+                    </li>
+                    <li>
+                      <div class="node" id = 'path1'></div>
+                    </li>
+                    <li>
+                      <div class="node" id = "path2"></div>
+                    </li>
+                    <li>
+                      WALL
+                    </li>
+                    <li>
+                      <div class="node" id ='wall'></div>
+                    </li>
+                  </ul>
+              </div>
+            </nav>
+            <nav class = "navbar" id = 'newbar'>
+              <div>
+                <p class="WriteDetails" id ='catch'>PICK SOMETHING!</p>
+              </div>
+            </nav>
+
+        <div class="mycanvas">
+            <canvas id="canvas"></canvas>
+          </div>
+       </div>
+    </div>
+
+    <div class="overlay"></div>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <!-- jQuery Custom Scroller CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#sidebar").mCustomScrollbar({
+                theme: "minimal"
+            });
+
+            $('#dismiss, .overlay').on('click', function () {
+                $('#sidebar').removeClass('active');
+                $('.overlay').removeClass('active');
+            });
+
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').addClass('active');
+                $('.overlay').addClass('active');
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
+        });
+    </script>
+    <script type="text/javascript" src = 'public/algorithms/data.js'></script>
+</body>
+
+</html>
