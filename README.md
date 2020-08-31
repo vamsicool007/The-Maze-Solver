@@ -5,10 +5,16 @@ Hi! and Welcome to The Maze. This is a piece of work which will help you to visu
 
 **Algorithm Used To Solve The Maze**
 
-- Depth-First-Search
-- Breadth-First-Search
-- Dijkstra's Algorithm
-- Left Wall Follower
-- Right Wall Follower
-- A star Algorithm
+- [Depth-First-Search](https://en.wikipedia.org/wiki/Depth-first_search)
+- [Breadth-First-Search](https://en.wikipedia.org/wiki/Breadth-first_search)
+- [Dijkstra's Algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm#:~:text=Dijkstra's%20algorithm%20(or%20Dijkstra's%20Shortest,and%20published%20three%20years%20later.)
+- [Left Wall Follower](https://en.wikipedia.org/wiki/Maze_solving_algorithm#Wall_follower)
+- [Right Wall Follower](https://en.wikipedia.org/wiki/Maze_solving_algorithm#Wall_follower)
+- [A star Algorithm](https://en.wikipedia.org/wiki/A*_search_algorithm)
   
+**Algorithm Used To Create Maze**
+
+ - [Depth-First-Search](https://en.wikipedia.org/wiki/Depth-first_search)
+ - [Binary Tree](https://youtu.be/BDXm568ql34)
+ - [Prim's Algorithm](https://en.wikipedia.org/wiki/Prim%27s_algorithm)
+ 
