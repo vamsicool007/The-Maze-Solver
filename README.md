@@ -15,6 +15,6 @@ Hi! and Welcome to The Maze. This is a piece of work which will help you to visu
 **Algorithm Used To Create Maze**
 
  - [Depth-First-Search](https://en.wikipedia.org/wiki/Depth-first_search)
- - [Binary Tree](https://youtu.be/BDXm568ql34)
+ - [Binary Tree](https://hurna.io/academy/algorithms/maze_generator/binary.html)
  - [Prim's Algorithm](https://en.wikipedia.org/wiki/Prim%27s_algorithm)
  
